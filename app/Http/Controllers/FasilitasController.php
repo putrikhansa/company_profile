@@ -39,12 +39,12 @@ class FasilitasController extends Controller
         $fasilitas                 = new Fasilitas;
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
 
-        if ($request->hasFile('foto')) {
-            $img  = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('storage/fasilitas', $name);
-            $fasilitas->foto = $name;
-        }
+        // if ($request->hasFile('foto')) {
+        //     $img  = $request->file('foto');
+        //     $name = rand(1000, 9999) . $img->getClientOriginalName();
+        //     $img->move('storage/fasilitas', $name);
+        //     $fasilitas->foto = $name;
+        // }
 
         $fasilitas->save();
         return redirect()->route('fasilitas.index')->with('success', 'data berhasil di tambahkan');
@@ -86,19 +86,19 @@ class FasilitasController extends Controller
     {
         $validated = $request->validate([
             'nama_fasilitas' => 'required',
-            'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            // 'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
 
         $fasilitas                 = Fasilitas::findOrFail($id);
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
 
-        if ($request->hasFile('foto')) {
-            $fasilitas->deleteImage();
-            $img  = $request->file('foto');
-            $name = rand(1000, 9999) . $img->getClientOriginalName();
-            $img->move('storage/fasilitas', $name);
-            $fasilitas->foto = $name;
-        }
+        // if ($request->hasFile('foto')) {
+        //     $fasilitas->deleteImage();
+        //     $img  = $request->file('foto');
+        //     $name = rand(1000, 9999) . $img->getClientOriginalName();
+        //     $img->move('storage/fasilitas', $name);
+        //     $fasilitas->foto = $name;
+        // }
 
         $fasilitas->save();
         return redirect()->route('fasilitas.index')->with('success', 'data berhasil di rubah');

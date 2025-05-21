@@ -18,7 +18,7 @@
                                             <thead class="bg-info text-white">
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>id_fasilitas</th>
+                                                    <th>Id Fasilitas</th>
                                                     <th>Foto</th>
                                                     <th>Aksi</th>
                                                 </tr>
@@ -28,7 +28,7 @@
                                                 @foreach ($fotofasilitas as $data)
                                                     <tr>
                                                         <td>{{ $no++ }}</td>
-                                                        <td>{{ $data->fasilitas->nama_fasilitas }}</td>
+                                                        <td>{{ $data->fasilitas->nama_fasilitas}}</td>
                                                         <td class="text-center">
                                                             <img src="{{ asset('/storage/fotofasilitas/' . $data->foto) }}"
                                                                 alt="Foto {{ $data->foto }}" width="100"
@@ -40,8 +40,7 @@
                                                                     class="btn btn-sm btn-warning mr-1">Lihat</a>
                                                                 <a href="{{ route('fotofasilitas.edit', $data->id) }}"
                                                                     class="btn btn-sm btn-success mr-1">Ubah</a>
-                                                                <form
-                                                                    action="{{ route('fotofasilitas.destroy', $data->id) }}"
+                                                                <form action="{{ route('fotofasilitas.destroy', $data->id) }}"
                                                                     method="POST"
                                                                     onsubmit="return confirm('Apakah Anda Yakin?')">
                                                                     @csrf
@@ -56,7 +55,7 @@
                                             </tbody>
                                         </table>
                                         @if ($fotofasilitas->isEmpty())
-                                            <p class="text-center mt-3">Tidak ada data foto_fasilitas tersedia.</p>
+                                            <p class="text-center mt-3">Tidak ada data fasilitas tersedia.</p>
                                         @endif
                                     </div>
                                 </div>

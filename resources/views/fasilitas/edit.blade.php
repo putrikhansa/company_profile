@@ -20,7 +20,7 @@
                                             <input type="text" name="nama_fasilitas" class="form-control"
                                                 value="{{ $fasilitas->nama_fasilitas }}" required>
                                         </div>
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label>foto</label>
                                             <img src="{{ asset('storage/fasilitas/' . $fasilitas->foto) }}" alt=""
                                                 width="100">
@@ -29,7 +29,7 @@
                                             @error('foto')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                        </div>
+                                        </div> --}}
                                         <div class="card-action">
                                             <button class="btn btn-info" style="float: right" type="submit">Ubah</button>
                                             <a href="{{ route('fasilitas.index') }}" class=""><i

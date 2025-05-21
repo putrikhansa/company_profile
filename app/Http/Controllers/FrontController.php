@@ -6,6 +6,8 @@ use App\Models\Dosen;
 use App\Models\Fakultas;
 use App\Models\fasilitas;
 use App\Models\Prestasi;
+use Illuminate\Http\Request;
+
 
 class FrontController extends Controller
 {
@@ -14,6 +16,7 @@ class FrontController extends Controller
     {
         return view('tentang');
     }
+
 
     public function index()
     {
@@ -66,9 +69,11 @@ class FrontController extends Controller
         return view('prestasi', compact('prestasi'));
     }
 
-    public function fasilitas()
+    public function fasilitas(Request $request)
     {
-        $fasilitas = Fasilitas::all();
+        // $fasilitas = Fasilitas::all();
+        // return view('fasilitas', compact('fasilitas'));
+        $fasilitas = Fasilitas::where('fasilitas')->get();
         return view('fasilitas', compact('fasilitas'));
     }
 

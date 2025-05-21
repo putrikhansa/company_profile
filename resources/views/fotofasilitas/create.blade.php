@@ -8,27 +8,28 @@
                         <div class="col-md-11">
                             <div class="card full-height">
                                 <div class="card-header">
-                                    <div class="card-title"> Tambah Data Foto Fasilitas</div>
+                                    <div class="card-title"> Tambah Data Fasilitas</div>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ route('fotofasilitas.store') }}" method="POST"
                                         enctype="multipart/form-data">
                                         @csrf
-                                        <div class="mb-2">
-                                            <label for="">foto</label>
-                                            <input type="file" name="foto" class="form-control" required>
-                                        </div>
-                                        <div class="card-body">
-                                            <label for="">Id Fasilitas</label>
-                                            <select name="id_fasilitas" id=""
-                                                class="form-control @error('id_fasilitas') is-invalid @enderror">
+                                        <div class="form-group mb-3">
+                                            <label>Nama Fasilitas</label>
+                                            <select class="form-control" name="nama_fasilitas">
                                                 @foreach ($fasilitas as $data)
                                                     <option value="{{ $data->id }}">{{ $data->nama_fasilitas }}</option>
                                                 @endforeach
                                             </select>
-                                            @error('id_fasilitas')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="">Foto</label>
+                                            <input type="file" class="form-control @error('foto') is-invalid @enderror"
+                                                name="foto">
+                                            @error('foto')
+                                                <div class="invalid-feedback">{{ $mesage }}</div>
                                             @enderror
+                                            
                                         </div>
                                         <div class="card-action">
                                             <button class="btn btn-info" style="float: right">Simpan</button>

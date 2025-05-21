@@ -11,16 +11,5 @@ class Fasilitas extends Model
     protected $fillable = ['id', 'nama_fasilitas'];
 
     public $timetams = true;
-    
-    public function foto_fasilitas()
-    {
-        return $this->hasOne(FotoFasilitas::class);
-    }
 
-    public function deleteImage()
-    {
-        if ($this->storage && file_exists(publlic_path('storage/fasilitas' . $this->foto))) {
-            return unlink(public_path('storage/fasilitas' . $this->foto));
-        }
-    }
 }

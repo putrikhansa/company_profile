@@ -39,9 +39,9 @@
                           <p>Fasilitas</p>
                       </a>
                   </li>
-                  <li class="nav-item active">
+                   <li class="nav-item active">
                       <a href="{{ route('fotofasilitas.index') }}" class="collapsed" aria-expanded="false">
-                          <i class="bi bi-building"></i>
+                          <i class="bi bi-award-fill"></i>
                           <p>Foto Fasilitas</p>
                       </a>
                   </li>

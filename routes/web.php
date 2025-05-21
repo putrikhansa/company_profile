@@ -34,4 +34,5 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('prestasi', PrestasiController::class);
     Route::resource('fotofasilitas', FotoFasilitasController::class);
 
+
 });

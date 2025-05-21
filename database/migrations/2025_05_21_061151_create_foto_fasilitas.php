@@ -14,11 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('foto_fasilitas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->BigIncrements('id');
             $table->string('foto');
-            $table->unsignedBigInteger('id_fasilitas');
-            $table->foreign('id_fasilitas')->references('id')->on('fasilitas')->onDelete('cascade');
+            $table->unsignedBigInteger('nama_fasilitas');
+
+            // relasi
+            $table->foreign('nama_fasilitas')->references('nama_fasilitas')->on('fasilitas')->oneDelete('cascade');
             $table->timestamps();
+
         });
     }
 

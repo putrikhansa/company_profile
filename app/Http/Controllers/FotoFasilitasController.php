@@ -12,10 +12,13 @@ class FotoFasilitasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $fotofasilitas = FotoFasilitas::orderBy('id', 'desc')->get();;
+
+        $fotofasilitas = FotoFasilitas::latest()->get();
         return view('fotofasilitas.index', compact('fotofasilitas'));
+
     }
 
     /**
@@ -27,6 +30,7 @@ class FotoFasilitasController extends Controller
     {
         $fasilitas = Fasilitas::all();
         return view('fotofasilitas.create', compact('fasilitas'));
+
     }
 
     /**
@@ -37,10 +41,17 @@ class FotoFasilitasController extends Controller
      */
     public function store(Request $request)
     {
-        $fotofasilitas               = new FotoFasilitas;
-        $fotofasilitas->id_fasilitas = $request->id_fasilitas;
+        $validated = $request->validate([
+            'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'nama_fasilitas' => 'required',
+        ]);
 
+        $fotofasilitas                 = new fotofasilitas();
+        $fotofasilitas->nama_fasilitas = $request->nama_fasilitas;
+
+        // upload gambar atau foto
         if ($request->hasFile('foto')) {
+            $fotofasilitas->deleteImage();
             $img  = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
             $img->move('storage/fotofasilitas', $name);
@@ -48,7 +59,10 @@ class FotoFasilitasController extends Controller
         }
 
         $fotofasilitas->save();
-        return redirect()->route('fotofasilitas.index')->with('success', 'data berhasil di tambahkan');
+
+        session()->flash('success', 'Data Successfully Added');
+
+        return redirect()->route('fotofasilitas.index');
     }
 
     /**
@@ -59,10 +73,9 @@ class FotoFasilitasController extends Controller
      */
     public function show($id)
     {
-        $fotofasilitas = fotofasilitas::findOrFail($id);
-        $fasilitas     = Fasilitas::all();
-        return view('fotofasilitas.edit', compact('fotofasilitas', 'fasilitas'));
-
+        $fotofasilitas = FotoFasilitas::findOrFail($id);
+        $fasilitas = Fasilitas::all();
+        return view('fotofasilitas.show', compact('fotofasilitas', 'fasilitas'));
     }
 
     /**
@@ -88,14 +101,15 @@ class FotoFasilitasController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-
-            'foto'         => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
-            'id_fasilitas' => 'required',
+            'foto'           => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'nama_fasilitas' => 'required',
         ]);
 
-        $fotofasilitas               = FotoFasilitas::findOrFail($id);
-        $fotofasilitas->id_fasilitas = $request->id_fasilitas;
+        $fotofasilitas                 = FotoFasilitas::findOrFail($id);
+        $fotofasilitas->foto           = $request->foto;
+        $fotofasilitas->nama_fasilitas = $request->nama_fasilitas;
 
+        // upload gambar atau foto
         if ($request->hasFile('foto')) {
             $fotofasilitas->deleteImage();
             $img  = $request->file('foto');
@@ -105,8 +119,9 @@ class FotoFasilitasController extends Controller
         }
 
         $fotofasilitas->save();
-        return redirect()->route('fotofasilitas.index')->with('success', 'data berhasil di rubah');
 
+        session()->flash('success', 'Data Successfully Changed');
+        return redirect()->route('fotofasilitas.index');
     }
 
     /**
@@ -117,9 +132,12 @@ class FotoFasilitasController extends Controller
      */
     public function destroy($id)
     {
-        $fotofasilitas = fotofasilitas::findOrFail($id);
-        $fotofasilitas->delete();
-        return redirect()->route('fotofasilitas.index')->with('success', 'Data Berhasil Dihapus');
+        $fotofasilitas = FotoFasilitas::findOrFail($id);
+        if ($fotofasilitas->foto && \Storage::exists('public/fotofasilitas' . $fotofasilitas->foto)) {
+            Storage::delete('public/fotofasilitas . $fotofasilitas->foto');
+        }
 
+        $fotofasilitas->delete();
+        return redirect()->route('fotofasilitas.index')->with('success', 'Data Successfully Deleted');
     }
 }

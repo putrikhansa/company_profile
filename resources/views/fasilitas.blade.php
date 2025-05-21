@@ -35,9 +35,19 @@
                     dolorem autem obcaecati, ipsam mollitia hic.
                 </p>
             </div>
+
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">All</li>
+                @foreach ($fasilitas as $data)
+                    <li data-filter=".filter-{{ Str::slug($data->nama_fasilitas) }}">
+                        {{ $data->nama_fasilitas }}</li>
+                @endforeach
+            </ul>
+
+
             <div class="row g-4 justify-content-center">
                 @foreach ($fasilitas as $data)
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp portfolio-item isotope-item filter-{{ Str::slug($data->fasilitas->nama_fasilitas) }}"  data-wow-delay="0.2s">
                         <div class="service-item">
                             <div class="service-img">
                                 <img src="{{ asset('/storage/fasilitas/' . $data->foto) }}"

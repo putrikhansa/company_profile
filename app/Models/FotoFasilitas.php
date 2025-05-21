@@ -8,15 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class FotoFasilitas extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['id', 'foto', 'id_fasilitas'];
+    protected $fillable = ['id', 'foto', 'nama_fasilitas'];
 
     public $timetams = true;
-
-    public function fasilitas()
-    {
-        return $this->belongsTo(Fasilitas::class, 'id_fasilitas');
-    }
 
     public function deleteImage()
     {
@@ -24,4 +18,10 @@ class FotoFasilitas extends Model
             return unlink(public_path('storage/fotofasilitas' . $this->foto));
         }
     }
+
+    public function fasilitas()
+    {
+        return $this->belongsTo(Fasilitas::class, 'nama_fasilitas');
+    }
+
 }
