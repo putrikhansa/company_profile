@@ -14,7 +14,7 @@ class DosenController extends Controller
      */
     public function index()
     {
-        $dosen = Dosen::all();
+        $dosen = Dosen::orderBy('id', 'desc')->get();
         return view('dosen.index', compact('dosen'));
     }
 
@@ -36,17 +36,17 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        $dosen = new Dosen();
+        $dosen             = new Dosen();
         $dosen->nama_dosen = $request->nama_dosen;
-        $dosen->telepon = $request->telepon;
-        $dosen->email = $request->email;
-        $dosen->jabatan = $request->jabatan;
-        $dosen->status = $request->status;
+        $dosen->telepon    = $request->telepon;
+        $dosen->email      = $request->email;
+        $dosen->jabatan    = $request->jabatan;
+        $dosen->status     = $request->status;
 
         // Set default foto (harus ada file ini di storage/dosen/default.jpg)
 
         if ($request->hasFile('foto')) {
-            $img = $request->file('foto');
+            $img  = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
             $img->move('storage/dosen', $name);
             $dosen->foto = $name;
@@ -91,22 +91,22 @@ class DosenController extends Controller
     {
         $validated = $request->validate([
             'nama_dosen' => 'required',
-            'telepon' => 'required',
-            'email' => 'required',
-            'jabatan' => 'required',
-            'status' => 'required',
-            'foto' => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
+            'telepon'    => 'required',
+            'email'      => 'required',
+            'jabatan'    => 'required',
+            'status'     => 'required',
+            'foto'       => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);
-        $dosen = Dosen::findOrFail($id);
+        $dosen             = Dosen::findOrFail($id);
         $dosen->nama_dosen = $request->nama_dosen;
-        $dosen->telepon = $request->telepon;
-        $dosen->email = $request->email;
-        $dosen->jabatan = $request->jabatan;
-        $dosen->status = $request->status;
+        $dosen->telepon    = $request->telepon;
+        $dosen->email      = $request->email;
+        $dosen->jabatan    = $request->jabatan;
+        $dosen->status     = $request->status;
 
         if ($request->hasFile('foto')) {
             $dosen->deleteImage();
-            $img = $request->file('foto');
+            $img  = $request->file('foto');
             $name = rand(1000, 9999) . $img->getClientOriginalName();
             $img->move('storage/dosen', $name);
             $dosen->foto = $name;

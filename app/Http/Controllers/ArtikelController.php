@@ -14,7 +14,7 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $artikel = artikel::all();
+        $artikel = artikel::orderBy('id','desc')->get();
         return view('artikel.index', compact('artikel'));
 
     }
@@ -38,6 +38,12 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'judul' => 'required|unique:artikels',
+            'isi'   => 'required',
+            'foto'  => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
+        ]);
+
         $artikel        = new Artikel;
         $artikel->judul = $request->judul;
         $artikel->isi   = $request->isi;
@@ -92,7 +98,7 @@ class ArtikelController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'judul' => 'required',
+            'judul' => 'required|unique:artikels',
             'isi'   => 'required',
             'foto'  => 'nullable|mimes:jpg,png,jpeg,webp,avif|max:9999',
         ]);

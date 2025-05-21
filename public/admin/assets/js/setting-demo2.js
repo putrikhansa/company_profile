@@ -6,8 +6,6 @@ $(window).resize(function() {
 	$(window).width(); 
 });
 
-getCheckmark();
-
 $('.changeBodyBackgroundFullColor').on('click', function(){
 	if($(this).attr('data-color') == 'default'){
 		$('body').removeAttr('data-background-full');
@@ -18,7 +16,6 @@ $('.changeBodyBackgroundFullColor').on('click', function(){
 	$(this).parent().find('.changeBodyBackgroundFullColor').removeClass("selected");
 	$(this).addClass("selected");
 	layoutsColors();
-	getCheckmark();
 });
 
 $('.changeLogoHeaderColor').on('click', function(){
@@ -32,7 +29,6 @@ $('.changeLogoHeaderColor').on('click', function(){
 	$(this).addClass("selected");
 	customCheckColor();
 	layoutsColors();
-	getCheckmark();
 });
 
 $('.changeTopBarColor').on('click', function(){
@@ -45,7 +41,6 @@ $('.changeTopBarColor').on('click', function(){
 	$(this).parent().find('.changeTopBarColor').removeClass("selected");
 	$(this).addClass("selected");
 	layoutsColors();
-	getCheckmark();
 });
 
 $('.changeSideBarColor').on('click', function(){
@@ -58,7 +53,6 @@ $('.changeSideBarColor').on('click', function(){
 	$(this).parent().find('.changeSideBarColor').removeClass("selected");
 	$(this).addClass("selected");
 	layoutsColors();
-	getCheckmark();
 });
 
 $('.changeBackgroundColor').on('click', function(){
@@ -66,15 +60,14 @@ $('.changeBackgroundColor').on('click', function(){
 	$('body').attr('data-background-color', $(this).attr('data-color'));
 	$(this).parent().find('.changeBackgroundColor').removeClass("selected");
 	$(this).addClass("selected");
-	getCheckmark();
 });
 
 function customCheckColor(){
 	var logoHeader = $('.logo-header').attr('data-background-color');
 	if (logoHeader !== "white") {
-		$('.logo-header .navbar-brand').attr('src', '../assets/img/kaiadmin/logo_light.svg');
+		$('.logo-header .navbar-brand').attr('src', '../../assets/img/logo.svg');
 	} else {
-		$('.logo-header .navbar-brand').attr('src', '../assets/img/kaiadmin/logo_dark.svg');
+		$('.logo-header .navbar-brand').attr('src', '../../assets/img/logo2.svg');
 	}
 }
 
@@ -98,10 +91,4 @@ if(!toggle_customSidebar) {
 	})
 	);
 	toggle_customSidebar = true;
-}
-
-function getCheckmark() {
-	var checkmark = `<i class="gg-check"></i>`;
-	$('.btnSwitch').find('button').empty();
-	$('.btnSwitch').find('button.selected').append(checkmark);
 }

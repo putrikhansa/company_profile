@@ -13,7 +13,8 @@ class FasilitasController extends Controller
      */
     public function index()
     {
-        $fasilitas = Fasilitas::all();
+        $fasilitas = Fasilitas::orderBy('id', 'desc')->get();
+;
         return view('fasilitas.index', compact('fasilitas'));
     }
 
@@ -90,6 +91,14 @@ class FasilitasController extends Controller
 
         $fasilitas                 = Fasilitas::findOrFail($id);
         $fasilitas->nama_fasilitas = $request->nama_fasilitas;
+
+        if ($request->hasFile('foto')) {
+            $fasilitas->deleteImage();
+            $img  = $request->file('foto');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('storage/fasilitas', $name);
+            $fasilitas->foto = $name;
+        }
 
         $fasilitas->save();
         return redirect()->route('fasilitas.index')->with('success', 'data berhasil di rubah');

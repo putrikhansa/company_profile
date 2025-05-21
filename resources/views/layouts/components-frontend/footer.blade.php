@@ -1,90 +1,137 @@
- <footer class="ftco-footer ftco-bg-dark ftco-section img"
-     style="background-image: url(user/images/bg_2.jpg); background-attachment:fixed;">
-     <div class="overlay"></div>
-     <div class="container">
-         <div class="row mb-5">
-             <div class="col-md-3">
-                 <div class="ftco-footer-widget mb-4">
-                     <h2><a class="navbar-brand" href="index.html"><i class="flaticon-university"></i>Genius
-                             <br><small>University</small></a></h2>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                     </ul>
-                 </div>
-             </div>
-             <div class="col-md-4">
-                 <div class="ftco-footer-widget mb-4">
-                     <h2 class="ftco-heading-2">Recent Blog</h2>
-                     <div class="block-21 mb-4 d-flex">
-                         <a class="blog-img mr-4" style="background-image: url(user/images/image_1.jpg);"></a>
-                         <div class="text">
-                             <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control
-                                     about</a></h3>
-                             <div class="meta">
-                                 <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                 <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="block-21 mb-4 d-flex">
-                         <a class="blog-img mr-4" style="background-image: url(user/images/image_2.jpg);"></a>
-                         <div class="text">
-                             <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control
-                                     about</a></h3>
-                             <div class="meta">
-                                 <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                 <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-md-2">
-                 <div class="ftco-footer-widget mb-4 ml-md-4">
-                     <h2 class="ftco-heading-2">Site Links</h2>
-                     <ul class="list-unstyled">
-                         <li><a href="#" class="py-2 d-block">Home</a></li>
-                         <li><a href="#" class="py-2 d-block">About</a></li>
-                         <li><a href="#" class="py-2 d-block">Courses</a></li>
-                         <li><a href="#" class="py-2 d-block">Students</a></li>
-                         <li><a href="#" class="py-2 d-block">Video</a></li>
-                     </ul>
-                 </div>
-             </div>
-             <div class="col-md-3">
-                 <div class="ftco-footer-widget mb-4">
-                     <h2 class="ftco-heading-2">Have a Questions?</h2>
-                     <div class="block-23 mb-3">
-                         <ul>
-                             <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St.
-                                     Mountain View, San Francisco, California, USA</span></li>
-                             <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2
-                                         392 3929 210</span></a></li>
-                             <li><a href="#"><span class="icon icon-envelope"></span><span
-                                         class="text">info@yourdomain.com</span></a></li>
-                         </ul>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <div class="row">
-             <div class="col-md-12 text-center">
+      <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+          <div class="container py-5">
+              <div class="row g-5">
+                  <div class="col-xl-9">
+                      <div class="mb-5">
+                          <div class="row g-4">
+                              <div class="col-md-6 col-lg-6 col-xl-5">
+                                  <div class="footer-item">
+                                      <a href="index.html" class="p-0">
+                                          <img src="{{ asset('frontend\img\Cuplikan_layar_2025-05-19_141931-removebg-preview.png') }}"
+                                              alt="Logo" width="250">
+                                      </a>
+                                      <p class="text-white mb-4">Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman,
+                                          Daerah Istimewa Yogyakarta 55281</p>
+                                      <div class="footer-btn d-flex">
+                                          <a class="btn btn-md-square rounded-circle me-3"
+                                              href="https://www.youtube.com/@UGM.Yogyakarta?app=desktop"><i
+                                                  class="bi bi-youtube"></i></a>
+                                          <a class="btn btn-md-square rounded-circle me-3"
+                                              href="https://www.instagram.com/ugm.yogyakarta/"><i
+                                                  class="fab fa-instagram"></i></a>
+                                          <a class="btn btn-md-square rounded-circle me-0"
+                                              href="https://id.linkedin.com/school/universitas-gadjah-mada-ugm-/"><i
+                                                  class="fab fa-linkedin-in"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xl-3">
+                                  <div class="footer-item">
+                                      <h4 class="text-white mb-4">Useful Links</h4>
+                                      <a href="tentang"><i class="fas fa-angle-right me-2"></i> Tentang</a>
+                                      <a href="fakultas"><i class="fas fa-angle-right me-2"></i> Fakultas</a>
+                                      <a href="fasilitas"><i class="fas fa-angle-right me-2"></i> Fasilitas</a>
+                                      <a href="dosen"><i class="fas fa-angle-right me-2"></i> Dosen</a>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-lg-6 col-xl-4">
+                                  <div class="footer-item">
+                                      <h4 class="mb-4 text-white">Instagram</h4>
+                                      <div class="row g-3">
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151459.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151459.png') }}"
+                                                          data-lightbox="footerInstagram-1" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151545.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151545.png') }}"
+                                                          data-lightbox="footerInstagram-2" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151701.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151701.png') }}"
+                                                          data-lightbox="footerInstagram-4" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151620.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151620.png') }}"
+                                                          data-lightbox="footerInstagram-3" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
 
-                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                     Copyright &copy;
-                     <script>
-                         document.write(new Date().getFullYear());
-                     </script> <i class="icon-heart" aria-hidden="true"></i> by <a
-                         href="https://www.instagram.com/ptrikhnsaa_/" target="_blank">Khansa</a>
-                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                 </p>
-             </div>
-         </div>
-     </div>
- </footer>
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151741.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/Cuplikan layar 2025-05-19 151741.png') }}"
+                                                          data-lightbox="footerInstagram-5" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-4">
+                                              <div class="footer-instagram rounded">
+                                                  <img src="{{ asset('frontend/img/carousel-2.png') }}"
+                                                      class="img-fluid w-100" alt="">
+                                                  <div class="footer-search-icon">
+                                                      <a href="{{ asset('frontend/img/carousel-2.png') }}"
+                                                          data-lightbox="footerInstagram-6" class="my-auto"><i
+                                                              class="fas fa-link text-white"></i></a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright py-4">
+          <div class="container">
+              <div class="row g-4 align-items-center">
+                  {{-- <div class="col-md-6 text-center text-md-end mb-md-0">
+                      <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                  class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right
+                          reserved.</span>
+                  </div> --}}
+                  <div class="col-md-6 text-center text-md-start text-body">
+                      <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                      <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                      <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                      Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                      Distributed By <a class="border-bottom text-white" href="https://themewagon.com">Khansaaa</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Copyright End -->

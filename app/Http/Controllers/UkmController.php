@@ -14,7 +14,7 @@ class UkmController extends Controller
      */
     public function index()
     {
-        $ukm = ukm::all();
+        $ukm = ukm::orderBy('id', 'desc')->get();
         return view('ukm.index', compact('ukm'));
 
     }

@@ -2,73 +2,67 @@
 <html lang="en">
 
 <head>
-    <title>Genius - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LifeSure - Life Insurance Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('frontend/css/aos.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('frontend/css/ionicons.min.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/jquery.timepicker.css') }}">
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('frontend/lib/animate/animate.min.css') }}" />
+    <link href="{{ asset('frontend/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('frontend/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
 
-    {{-- navbar --}}
+    {{-- Navbar --}}
     @include('layouts.components-frontend.navbar')
-    <!-- END nav -->
+    {{-- Navbar --}}
 
-    <div class= "container">
-        @yield('content')
-    </div>
+    @yield('content')
 
-    {{-- footer --}}
+    <!-- Footer Start -->
     @include('layouts.components-frontend.footer')
-    {{-- end --}}
-
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4"
-                stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4"
-                stroke-miterlimit="10" stroke="#F96D00" />
-        </svg></div>
+    <!-- Footer End -->
 
 
-    <script src="{{ asset('frontend/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.easing.1.3.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/aos.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/bootstrap-datepicker.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.timepicker.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('frontend/js/google-map.js') }}"></script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('frontend/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('frontend/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('frontend/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('frontend/lib/counterup/counterup.min.js') }}"></script>
+    <script src="{{ asset('frontend/lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('frontend/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+
+    <!-- Template Javascript -->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
-
 </body>
 
 </html>
