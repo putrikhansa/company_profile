@@ -6,6 +6,9 @@ use App\Models\Dosen;
 use App\Models\Fakultas;
 use App\Models\fasilitas;
 use App\Models\Prestasi;
+use App\Models\FotoFasilitas;
+use App\Models\ukm;
+
 use Illuminate\Http\Request;
 
 
@@ -32,9 +35,35 @@ class FrontController extends Controller
     public function show($id)
     {
         $artikel = Artikel::findOrFail($id);
+
         return view('detail', compact('artikel'));
+        
+    }
+    public function detailprestasi($id)
+    {
+        $prestasi = Prestasi::findOrFail($id);
+
+        return view('detailprestasi', compact('prestasi'));
+        
+    }
+    public function detailfakul($id)
+    {
+        $fakultas = Fakultas::findOrFail($id);
+
+        return view('detailfakul', compact('fakultas'));
+        
     }
 
+    public function detailfasilitas($id)
+    {
+        $fasilitas = Fasilitas::findOrFail($id);
+        $fotofasilitas = FotoFasilitas::where('nama_fasilitas', $fasilitas->id)->get();
+
+        return view('detailfasilitas', compact('fasilitas', 'fotofasilitas'));
+        
+    }
+
+   
     public function dosen()
     {
         $dosen = Dosen::all();
@@ -58,7 +87,7 @@ class FrontController extends Controller
 
     public function ukm()
     {
-        $ukm = Fakultas::all();
+        $ukm = Ukm::all();
         return view('ukm', compact('ukm'));
 
     }
@@ -71,10 +100,11 @@ class FrontController extends Controller
 
     public function fasilitas(Request $request)
     {
-        // $fasilitas = Fasilitas::all();
+        $fasilitas = Fasilitas::all();
         // return view('fasilitas', compact('fasilitas'));
-        $fasilitas = Fasilitas::where('fasilitas')->get();
-        return view('fasilitas', compact('fasilitas'));
+        // $fasilitas = Fasilitas::all('fotofasilitas')->get();
+
+        return view('fasilitas', compact ('fasilitas'));    
     }
 
 }

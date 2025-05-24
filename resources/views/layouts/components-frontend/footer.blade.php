@@ -129,7 +129,7 @@
                       <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                       <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
                       Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
-                      Distributed By <a class="border-bottom text-white" href="https://themewagon.com">Khansaaa</a>
+                      Distributed By <a class="border-bottom text-white" href="https://www.instagram.com/ptrikhnsaa_/">Khansaaa</a>
                   </div>
               </div>
           </div>

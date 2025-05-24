@@ -18,10 +18,10 @@
                                             <label for="">Nama Fasilitas</label>
                                             <input type="text" name="nama_fasilitas" class="form-control" required>
                                         </div>
-                                        {{-- <div class="mb-2">
+                                     <div class="mb-2">
                                             <label for="">Foto</label>
                                             <input type="file" name="foto" class="form-control" required>
-                                        </div> --}}
+                                        </div> 
                                         <div class="card-action">
                                             <button class="btn btn-info" style="float: right">Simpan</button>
                                             <a href="{{ route('fasilitas.index') }}" class=""><i

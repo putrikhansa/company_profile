@@ -19,7 +19,7 @@
                                                 <tr>
                                                     <th>No</th>
                                                     <th>Nama Fasilitas</th>
-                                                    {{-- <th>Foto</th> --}}
+                                                    <th>Foto</th> 
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -27,13 +27,13 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($fasilitas as $data)
                                                     <tr>
-                                                        <td>{{ $no++ }}</td>
+                                                        <td>{{ $data->id }}</td>
                                                         <td>{{ $data->nama_fasilitas }}</td>
-                                                        {{-- <td class="text-center">
+                                                         <td class="text-center">
                                                             <img src="{{ asset('/storage/fasilitas/' . $data->foto) }}"
                                                                 alt="Foto {{ $data->nama_fasilitas }}" width="100"
                                                                 class="img-fluid rounded mt-2 mb-2">
-                                                        </td> --}}
+                                                        </td> 
                                                         <td>
                                                             <div class="d-flex flex-wrap gap-1">
                                                                 <a href="{{ route('fasilitas.show', $data->id) }}"

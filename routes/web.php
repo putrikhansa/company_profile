@@ -21,8 +21,13 @@ Route::get('/prestasi', [FrontController::class, 'prestasi']);
 Route::get('/fasilitas', [FrontController::class, 'fasilitas']);
 Route::get('/ukm', [FrontController::class, 'ukm']);
 
+
 Route::get('/', [FrontController::class, 'index'])->name('welcome');
 Route::get('/detail/{id}', [FrontController::class, 'show'])->name('detail');
+Route::get('/detailprestasi/{id}', [FrontController::class, 'detailprestasi'])->name('detailprestasi');
+Route::get('/detailfakul/{id}', [FrontController::class, 'detailfakul'])->name('detailfakul');
+Route::get('/detailfasilitas/{id}', [FrontController::class, 'detailfasilitas'])->name('detailfasilitas');
+
 
 // admin
 Route::prefix('admin')->middleware('auth')->group(function () {

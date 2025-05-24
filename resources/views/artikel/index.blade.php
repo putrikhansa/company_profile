@@ -14,7 +14,7 @@
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-head-bg-info table-bordered-bd-info mt-4">
-                                            <thead>
+                                            <thead class="bg-white text-white">
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">Judul</th>
@@ -27,7 +27,7 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($artikel as $data)
                                                     <tr>
-                                                        <td scope="row">{{ $no++ }}</td>
+                                                        <td scope="row">{{ $data->id }}</td>
                                                         <td scope="row">{{ $data->judul }}</td>
                                                         <td scope="row">{{ Str::limit($data->isi, 5) }}</td>
                                                         <td>

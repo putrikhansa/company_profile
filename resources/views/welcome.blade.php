@@ -20,14 +20,10 @@
                             <div class="text-sm-center text-md-start">
                                 <h4 class="text-white text-uppercase fw-bold mb-4">Excellence WIth Morality</h4>
                                 <h1 class="display-1 text-white mb-4">Universitas Gadjah Mada</h1>
-                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy...
-                                </p>
                                 <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2"
+                                    {{-- <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2"
                                         href="https://www.youtube.com/@UGM.Yogyakarta?app=desktop"><i
-                                            class="fas fa-play-circle me-2"></i> Watch Video</a>
-
+                                            class="fas fa-play-circle me-2"></i> Watch Video</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -55,14 +51,10 @@
                             <div class="text-sm-center text-md-end">
                                 <h4 class="text-white text-uppercase fw-bold mb-4">Excellence WIth Morality</h4>
                                 <h1 class="display-1 text-white mb-4">Universitas Gadjah Mada</h1>
-                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting
-                                    industry. Lorem Ipsum has been the industry's standard dummy...
-                                </p>
                                 <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
-                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2"
+                                    {{-- <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2"
                                         href="https://www.youtube.com/@UGM.Yogyakarta?app=desktop"><i
-                                            class="fas fa-play-circle me-2"></i> Watch Video</a>
-
+                                            class="fas fa-play-circle me-2"></i> Watch Video</a> --}}
                                 </div>
                             </div>
                         </div>
@@ -79,28 +71,25 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h1 class="display-4 mb-4">Berita Terkini</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
-                    sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($artikel as $data)
                     <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="blog-item">
-                            <div class="blog-img">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="position-relative">
                                 <img src="{{ asset('/storage/artikel/' . $data->foto) }}" alt=""
-                                    class="img-fluid rounded-top w-100">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Berita</span>
+                                    class="img-fluid rounded-top w-100" style="height: 200px; object-fit: cover;">
+                                <div
+                                    class="position-absolute top-0 start-0 bg-warning text-white py-1 px-3 rounded-bottom-end small">
+                                    Berita
                                 </div>
                             </div>
-                            <div class="blog-content p-4">
-                                <a href="#"
-                                    class="h4 d-inline-block mb-3">{{ Str::limit(strip_tags($data->judul), 90) }}</a>
-                                <p class="mb-3">{{ Str::limit(strip_tags($data->isi), 90) }}</p>
-                                <a href="{{ url('detail', $data->id) }}" class="btn p-0"> Baca Selengkapnya <i
-                                        class="fa fa-arrow-right"></i></a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ Str::limit(strip_tags($data->judul), 90) }}</h5>
+                                <p class="card-text text-muted">{{ Str::limit(strip_tags($data->isi), 90) }}</p>
+                                <a href="{{ url('detail', $data->id) }}" class="mt-auto btn btn-link text-warning p-0">
+                                    Baca Selengkapnya <i class="fa fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -114,7 +103,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid bg-light about pb-5">
+    <div class="container-fluid bg-light about pb-5" id="about">
         <div class="container pb-5">
             <div class="row g-5">
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
@@ -166,36 +155,31 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h1 class="display-4 mb-4">Fakultas</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint
-                    dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach ($fakultas as $data)
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="{{ asset('storage/fakultas/' . $data->foto) }}" alt=""
-                                    class="img-fluid rounded-top w-100">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-building fa-2x"></i>
+                        <div class="card h-100 border-0 shadow-sm rounded-4">
+                            <div class="position-relative">
+                                <img src="{{ asset('storage/fakultas/' . $data->foto) }}" alt="{{ $data->nama_fakultas }}"
+                                    class="card-img-top rounded-top" style="height: 200px; object-fit: cover;">
+                                <div class="position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2 shadow-sm">
+                                    <i class="fa fa-building fa-lg text-primary"></i>
                                 </div>
                             </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">{{ $data->nama_fakultas }}</a>
-                                    <p class="mb-4">{{ $data->deskripsi }}</p>
-                                    {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a> --}}
-                                </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ $data->nama_fakultas }}</h5>
+                                <p class="card-text text-muted">
+                                    {{ Str::limit(strip_tags($data->deskripsi), 120) }}
+                                </p>
+                                <a href="{{ url('detailfakul', $data->id) }}"
+                                    class="btn btn-outline-warning mt-auto">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                {{-- <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-                </div> --}}
             </div>
+
         </div>
     </div>
     <!-- Service End -->
@@ -255,14 +239,10 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid team pb-5">
+    <div class="about container-fluid team pb-5">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h1 class="display-4 mb-4">Dosen</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
-                    sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
             </div>
             <div class="row d-flex">
                 @foreach ($dosen as $data)
@@ -294,9 +274,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h1 class="display-4 mb-4">Prestasi</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt
-                    sint dolorem autem obcaecati, ipsam mollitia hic.
+                <p class="mb-0">
                 </p>
             </div>
             <div class="row g-4">
@@ -309,7 +287,11 @@
                             </div>
                             <div class="flex-grow-2">
                                 <h4 class="mb-3">{{ $data->nama_prestasi }}</h4>
-                                <p>{{ $data->deskripsi }}</p>
+                                <p class="card-text text-muted">{{ Str::limit(strip_tags($data->deskripsi), 90) }}</p>
+                                <a href="{{ url('detailprestasi', $data->id) }}"
+                                    class="mt-auto btn btn-link text-warning p-0">
+                                    SELENGKAPNYA <i class="fa fa-arrow-right"></i>
+                                </a>
                             </div>
                             {{-- <a class="btn btn-primary rounded-pill py-2 px-4 mt-auto" href="#">Learn More</a> --}}
                         </div>
@@ -319,100 +301,4 @@
         </div>
     </div>
     <!-- Feature End -->
-
-
-    <!-- Testimonial Start -->
-   <div class="container-fluid testimonial pb-5">
-            <div class="container pb-5">
-                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                    <h4 class="text-primary">Testimonial</h4>
-                    <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                        cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint
-                        dolorem autem obcaecati, ipsam mollitia hic.
-                    </p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="{{ asset('frontend/img/testimonial-1.jpg') }}" class="img-fluid h-100 rounded"
-                                        style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error
-                                        molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="{{ asset('frontend/img/testimonial-2.jpg') }}" class="img-fluid h-100 rounded"
-                                        style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error
-                                        molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded">
-                        <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
-                                    <img src="{{ asset('frontend/img/testimonial-3.jpg') }}" class="img-fluid h-100 rounded"
-                                        style="object-fit: cover;" alt="">
-                                </div>
-                            </div>
-                            <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">Client Name</h4>
-                                    <p class="mb-3">Profession</p>
-                                    <div class="d-flex text-primary mb-3">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                        <i class="fas fa-star text-body"></i>
-                                    </div>
-                                    <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error
-                                        molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- Testimonial End -->
 @endsection

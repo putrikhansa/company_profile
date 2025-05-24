@@ -41,7 +41,7 @@
                   </li>
                    <li class="nav-item active">
                       <a href="{{ route('fotofasilitas.index') }}" class="collapsed" aria-expanded="false">
-                          <i class="bi bi-award-fill"></i>
+                          <i class="bi bi-building"></i>
                           <p>Foto Fasilitas</p>
                       </a>
                   </li>

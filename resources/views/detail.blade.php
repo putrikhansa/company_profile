@@ -25,7 +25,7 @@
             <h4 class="text-primary">Artikel Universitas Gadjah Mada</h4>
             <h3 class="display-8 mb-4">{{ $artikel->judul }}</h3>
             <p>{{ $artikel->isi }}</p>
-            <a href="{{ route('welcome') }}" class="btn btn-primary">Kembali</a>
+            <a href="{{ route('welcome') }}" class="btn btn-warning">Kembali</a>
         </div>
     </div>
 </div>

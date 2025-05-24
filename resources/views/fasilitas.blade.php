@@ -9,68 +9,75 @@
     </div>
     <!-- Spinner End -->
 
-    <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style="max-width: 900px;">
-            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Fasilitas </h4>
+    <div class="container-fluid bg-breadcrumb position-relative"
+        style="background-image: url('frontend/img/Introducing UGM - Universitas Gadjah Mada.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <!-- Overlay gelap -->
+        <div
+            style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;">
+        </div>
+
+        <!-- Konten di atas overlay -->
+        <div class="container text-center py-5 position-relative" style="max-width: 900px; z-index: 2;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Fasilitas</h4>
             <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                <li class="breadcrumb-item"><a href="/">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="/" class="text-white">Beranda</a></li>
                 <li class="breadcrumb-item active text-primary">Fasilitas</li>
             </ol>
         </div>
     </div>
 
+
+
     <br>
-
-
-
 
 
     <!-- Service Start -->
     <div class="container-fluid service py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h1 class="display-4 mb-4">Fasilitas</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis
-                    cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint
-                    dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
-            </div>
 
-            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter="*" class="filter-active">All</li>
-                @foreach ($fasilitas as $data)
-                    <li data-filter=".filter-{{ Str::slug($data->nama_fasilitas) }}">
-                        {{ $data->nama_fasilitas }}</li>
-                @endforeach
-            </ul>
+            <div class="container-fluid service py-5">
+                <div class="container py-5">
+                    <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
 
-
-            <div class="row g-4 justify-content-center">
-                @foreach ($fasilitas as $data)
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp portfolio-item isotope-item filter-{{ Str::slug($data->fasilitas->nama_fasilitas) }}"  data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="{{ asset('/storage/fasilitas/' . $data->foto) }}"
-                                    alt="Foto {{ $data->nama_fasilitas }}" class="img-fluid rounded-top w-100">
-                                {{-- <div class="service-icon p-3">
-                                    <i class="fa fa-building fa-2x"></i>
-                                </div> --}}
-                            </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">{{ $data->nama_fasilitas }}</a>
-                                    <p class="mb-4">{{ $data->deskripsi }}</p>
-                                    {{-- <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a> --}}
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                @endforeach
-                {{-- <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="row g-4 justify-content-center">
+                        @foreach ($fasilitas as $data)
+                            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                              <a href="{{ route('detailfasilitas', $data->id)}}">
+                                <div class="card h-100 border-0 shadow-sm rounded-4">
+                                    <div class="position-relative">
+                                        <img src="{{ asset('storage/fasilitas/' . $data->foto) }}"
+                                            alt="{{ $data->nama_fasilitas }}" class="card-img-top rounded-top"
+                                            style="height: 200px; object-fit: cover;">
+                                        <div
+                                            class="position-absolute top-0 end-0 m-3 bg-white rounded-circle p-2 shadow-sm">
+                                            <i class="fa fa-building fa-lg text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">{{ $data->nama_fasilitas }}</h5>
+
+                                    </div>
+                                </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+            {{-- <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
                     <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
                 </div> --}}
-            </div>
         </div>
+    </div>
     </div>
     <!-- Service End -->
 @endsection

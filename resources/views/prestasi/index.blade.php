@@ -29,7 +29,7 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($prestasi as $data)
                                                     <tr>
-                                                        <td scope="row">{{ $no++ }}</td>
+                                                        <td scope="row">{{ $data->id }}</td>
                                                         <td scope="row">{{ $data->nama_prestasi }}</td>
                                                         {{-- <td scope="row">{{ Str::limit($data->deskripsi, 10) }}</td> --}}
                                                         <td scope="row">{{ $data->jenis }}</td>

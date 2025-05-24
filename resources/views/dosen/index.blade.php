@@ -31,7 +31,7 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($dosen as $data)
                                                     <tr>
-                                                        <td scope="row">{{ $no++ }}</td>
+                                                        <td scope="row">{{ $data->id }}</td>
                                                         <td scope="row">{{ $data->nama_dosen }}</td>
                                                         {{-- <td scope="row">{{ $data->telepon }}</td> --}}
                                                         {{-- <td scope="row">{{ $data->email }}</td> --}}

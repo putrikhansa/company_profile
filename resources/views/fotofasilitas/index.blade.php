@@ -27,7 +27,7 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($fotofasilitas as $data)
                                                     <tr>
-                                                        <td>{{ $no++ }}</td>
+                                                        <td>{{ $data->id }}</td>
                                                         <td>{{ $data->fasilitas->nama_fasilitas}}</td>
                                                         <td class="text-center">
                                                             <img src="{{ asset('/storage/fotofasilitas/' . $data->foto) }}"

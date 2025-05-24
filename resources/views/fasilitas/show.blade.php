@@ -16,14 +16,14 @@
                                         <td>{{ $fasilitas->nama_fasilitas }}</td>
                                     </tr>
                                     <th>Foto</th>
-                                    {{-- <td>
+                                     <td>
                                         @if ($fasilitas->foto)
                                             <img src="{{ Storage::url('fasilitas/' . $fasilitas->foto) }}" alt="Foto fasilitas"
                                                 class="img-thumbnail" width="150">
                                         @else
                                             <p>Tidak ada foto</p>
                                         @endif
-                                    </td> --}}
+                                    </td> 
                                     </tr>
                                 </table>
                                 <a href="{{ route('fasilitas.index') }}" class="btn btn-primary">Kembali</a>

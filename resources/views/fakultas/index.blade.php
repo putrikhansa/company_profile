@@ -35,7 +35,7 @@
                                                 @php $no = 1; @endphp
                                                 @foreach ($fakultas as $data)
                                                     <tr>
-                                                        <td scope="row">{{ $no++ }}</td>
+                                                        <td scope="row">{{ $data->id }}</td>
                                                         <td scope="row">{{ $data->nama_fakultas }}</td>
                                                         <td scope="row">{{ Str::limit($data->deskripsi, 10) }}</td>
                                                         <td scope="row"><img
